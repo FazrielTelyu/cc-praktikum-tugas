@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achmad Fazriel Miftahudin &bull; Sistem Informasi Telkom University Jakarta</title>
+  <meta name="description" content="Profil akademik, kepemimpinan ERPify, dan portofolio proyek oleh Achmad Fazriel Miftahudin, mahasiswa Sistem Informasi Telkom University Jakarta.">
+  <style>
+    /* -------------------------------------------------------------
+       CSS Design Tokens (Landscape Sidebar Layout - Human Centered)
+       ------------------------------------------------------------- */
+    :root {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --bg-muted: #e2e8f0;
+      
+      --border-subtle: #e2e8f0;
+      --border-medium: #cbd5e1;
+      --border-strong: #94a3b8;
+      
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-soft: #64748b;
+      
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-surface: #eff6ff;
+      --accent-border: #bfdbfe;
+      
+      --success: #16a34a;
+      --success-surface: #f0fdf4;
+      --success-border: #bbf7d0;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 14px -1px rgba(15, 23, 42, 0.07);
+      --shadow-hover: 0 8px 24px -2px rgba(37, 99, 235, 0.1);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-full: 9999px;
+      
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-serif: "Newsreader", "Charter", "Bitstream Charter", Cambria, Georgia, serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      
+      --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --focus-ring: 2px solid #2563eb;
+    }
+
+    /* Dark Mode Theme */
+    html.dark {
+      --bg-page: #090d16;
+      --bg-surface: #111827;
+      --bg-subtle: #1e293b;
+      --bg-muted: #334155;
+      
+      --border-subtle: #1e293b;
+      --border-medium: #334155;
+      --border-strong: #475569;
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-soft: #64748b;
+      
+      --accent: #38bdf8;
+      --accent-hover: #7dd3fc;
+      --accent-surface: #082f49;
+      --accent-border: #0369a1;
+      
+      --success: #4ade80;
+      --success-surface: #052e16;
+      --success-border: #14532d;
+      
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.6);
+      --shadow-hover: 0 8px 24px -2px rgba(56, 189, 248, 0.15);
+      --focus-ring: 2px solid #38bdf8;
+    }
+
+    /* -------------------------------------------------------------
+       Base Reset
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      min-height: 100vh;
+      transition: background-color var(--transition), color var(--transition);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: 3px;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* -------------------------------------------------------------
+       Landscape 2-Column Grid Layout
+       ------------------------------------------------------------- */
+    .layout-wrapper {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      min-height: 100vh;
+    }
+
+    /* Desktop View (Landscape with Sticky Sidebar) */
+    @media (min-width: 992px) {
+      .layout-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 4.5rem;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 380px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4rem 0 3rem;
+      }
+
+      .content-area {
+        flex: 1;
+        max-width: 680px;
+        padding: 4rem 0 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+      }
+    }
+
+    /* Mobile / Tablet View (<992px) */
+    @media (max-width: 991px) {
+      .layout-wrapper {
+        padding: 0 1.25rem;
+      }
+
+      .sidebar {
+        padding: 2.5rem 0 1.5rem;
+        border-bottom: 1px solid var(--border-subtle);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .content-area {
+        padding: 2.5rem 0 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       Sidebar Styles
+       ------------------------------------------------------------- */
+    .sidebar-top {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 2.15rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--text-main);
+    }
+
+    .brand-tagline {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.35;
+    }
+
+    .brand-campus {
+      font-size: 0.84375rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .brand-summary {
+      font-size: 0.90625rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      margin-top: 0.25rem;
+    }
+
+    /* Sidebar Navigation Links */
+    .sidebar-nav {
+      margin-top: 0.75rem;
+    }
+
+    .nav-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      list-style: none;
+    }
+
+    .nav-item-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .nav-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      transition: color var(--transition);
+    }
+
+    .nav-item-link:hover, .nav-item-link.active {
+      color: var(--text-main);
+      background-color: var(--bg-subtle);
+    }
+
+    .nav-item-link.active {
+      font-weight: 600;
+    }
+
+    .nav-item-link.active .nav-num {
+      color: var(--accent);
+    }
+
+    /* Sidebar Bottom: Status & Theme */
+    .sidebar-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      padding-top: 1.25rem;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      width: fit-content;
+    }
+
+    .status-dot-pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--success);
+      box-shadow: 0 0 0 2px var(--success-border);
+    }
+
+    .sidebar-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .theme-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      min-height: 38px;
+      padding: 0.35rem 0.85rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-full);
+      color: var(--text-main);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+
+    .theme-button:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--border-strong);
+    }
+
+    .email-quick-link {
+      font-size: 0.84375rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.35rem 0.5rem;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition);
+    }
+
+    .email-quick-link:hover {
+      color: var(--text-main);
+    }
+
+    /* -------------------------------------------------------------
+       Content Area Sections
+       ------------------------------------------------------------- */
+    .content-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      scroll-margin-top: 4.5rem;
+    }
+
+    .section-headline {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      border-bottom: 2px solid var(--border-subtle);
+      padding-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--text-main);
+    }
+
+    .section-meta-chip {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Hero / Bio Card */
+    .intro-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--success));
+    }
+
+    .lead-headline {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--text-main);
+    }
+
+    .lead-body {
+      font-size: 1.03125rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .lead-body strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Key Academic & Leadership Highlights */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding-top: 0.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .stats-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-soft);
+    }
+
+    .stat-val {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .stat-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Personal Story Callout */
+    .story-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      font-size: 0.96875rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .story-card strong {
+      color: var(--text-main);
+    }
+
+    /* -------------------------------------------------------------
+       Leadership & Experience Cards
+       ------------------------------------------------------------- */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      list-style: none;
+    }
+
+    .exp-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .exp-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-border);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .exp-role-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .exp-period {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      background-color: var(--bg-subtle);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .exp-org {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .exp-desc {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       Projects Section (Filter & Cards)
+       ------------------------------------------------------------- */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.25rem;
+      width: fit-content;
+      margin-bottom: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+
+    .filter-btn.active {
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-btn:hover:not(.active) {
+      color: var(--text-main);
+    }
+
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      list-style: none;
+    }
+
+    .project-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.65rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-border);
+    }
+
+    .project-card.featured {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(180deg, var(--bg-surface), var(--bg-page));
+    }
+
+    .project-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .project-name-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .project-badge {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .project-year-badge {
+      font-family: var(--font-mono);
+      font-size: 0.78125rem;
+      color: var(--text-soft);
+      background-color: var(--bg-subtle);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .project-body {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .project-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.35rem;
+    }
+
+    .tech-chip {
+      font-family: var(--font-mono);
+      font-size: 0.71875rem;
+      font-weight: 500;
+      background-color: var(--bg-subtle);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .project-card:hover .tech-chip {
+      border-color: var(--border-medium);
+    }
+
+    /* -------------------------------------------------------------
+       Certifications & Ecosystem Grid
+       ------------------------------------------------------------- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cert-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .cert-type {
+      font-family: var(--font-mono);
+      font-size: 0.71875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+
+    .cert-name {
+      font-size: 0.96875rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .cert-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -------------------------------------------------------------
+       Contact Section Card
+       ------------------------------------------------------------- */
+    .contact-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .contact-body {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 42px;
+      padding: 0.5rem 1.15rem;
+      background-color: var(--text-main);
+      color: var(--bg-page);
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      transition: opacity var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-solid:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      color: var(--bg-page);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 42px;
+      padding: 0.5rem 1rem;
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-medium);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+
+    .copy-status-msg {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--success);
+      font-weight: 600;
+      min-height: 1.25rem;
+    }
+
+    /* -------------------------------------------------------------
+       Footer
+       ------------------------------------------------------------- */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 0 1rem;
+      font-size: 0.8125rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .host-telemetry {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    /* -------------------------------------------------------------
+       Accessibility: Reduced Motion
+       ------------------------------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Landscape Two-Column Wrapper -->
+  <div class="layout-wrapper">
+    <!-- Pinned Left Sidebar (Landscape Navigation) -->
+    <aside class="sidebar" aria-label="Informasi Utama &amp; Navigasi Samping">
+      <div class="sidebar-top">
+        <div class="brand-block">
+          <h1 class="brand-name">Achmad Fazriel Miftahudin</h1>
+          <span class="brand-tagline">Sistem Informasi &bull; Angkatan 2024</span>
+          <span class="brand-campus">Telkom University Kampus Jakarta</span>
+          <p class="brand-summary">
+            Fokus mendalam pada Enterprise Resource Planning (ERP), arsitektur proses bisnis, dan analisis data.
+          </p>
+        </div>
+
+        <!-- Sidebar Navigation Menu -->
+        <nav class="sidebar-nav" aria-label="Navigasi Menu Samping">
+          <ul class="nav-items">
+            <li>
+              <a href="#tentang" class="nav-item-link active" data-section="tentang">
+                <span class="nav-num">01</span>
+                <span>Tentang &amp; Rekam Jejak</span>
+              </a>
+            </li>
+            <li>
+              <a href="#kepemimpinan" class="nav-item-link" data-section="kepemimpinan">
+                <span class="nav-num">02</span>
+                <span>Kepemimpinan &amp; Peran</span>
+              </a>
+            </li>
+            <li>
+              <a href="#proyek" class="nav-item-link" data-section="proyek">
+                <span class="nav-num">03</span>
+                <span>Proyek &amp; Implementasi</span>
+              </a>
+            </li>
+            <li>
+              <a href="#sertifikasi" class="nav-item-link" data-section="sertifikasi">
+                <span class="nav-num">04</span>
+                <span>Sertifikasi &amp; Perkakas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#kontak" class="nav-item-link" data-section="kontak">
+                <span class="nav-num">05</span>
+                <span>Kontak</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Sidebar Bottom: Status, Theme & Direct Email -->
+      <div class="sidebar-bottom">
+
+
+        <div class="sidebar-controls">
+          <button id="theme-btn" class="theme-button" type="button" aria-label="Ganti tema tampilan">
+            <span id="theme-icon" aria-hidden="true">&#9681;</span>
+            <span id="theme-label">Tema</span>
+          </button>
+          <a href="mailto:achmadfazriel@student.telkomuniversity.ac.id" class="email-quick-link">
+            Kirim Email Langsung &nearr;
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Scrollable Right Content Area -->
+    <main class="content-area">
+      <!-- Section 1: Tentang / Profil & Rekam Jejak -->
+      <section id="tentang" class="content-section" aria-labelledby="heading-tentang">
+        <div class="intro-card">
+          <h2 id="heading-tentang" class="lead-headline">
+            Mengintegrasikan proses bisnis perusahaan dan kecerdasan data secara presisi.
+          </h2>
+          <p class="lead-body">
+            Halo, saya <strong>Achmad Fazriel Miftahudin</strong> (lahir 21 Maret 2005), mahasiswa Program Studi S1 Sistem Informasi angkatan 2024 di <strong>Telkom University Kampus Jakarta</strong>.
+            Saya berdedikasi mengembangkan solusi terintegrasi di ranah <strong>Enterprise Resource Planning (ERP)</strong>, pemodelan arsitektur bisnis, dan rekayasa data analitis.
+          </p>
+          <p class="lead-body">
+            Halaman ini dikembangkan sebagai berkas mandiri untuk memenuhi tugas <strong>Praktikum Komputasi Awan (Modul 1: Web Server on Cloud)</strong>,
+            sekaligus ruang dokumentasi portofolio profesional yang dideploy langsung di cloud Vercel.
+          </p>
+
+          <!-- Key Metrics Strip -->
+          <div class="stats-strip">
+            <div class="stat-box">
+              <span class="stat-label">Pencapaian Akademik</span>
+              <span class="stat-val">IPK 3.84</span>
+              <span class="stat-sub">Sistem Informasi '24</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Amanah Strategis</span>
+              <span class="stat-val">Ketua ERPify</span>
+              <span class="stat-sub">Periode Berjalan</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Praktikum Cloud</span>
+              <span class="stat-val">Modul 1</span>
+              <span class="stat-sub">Vercel &amp; Azure Deploy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Life & Balance Narrative Card -->
+        <div class="story-card">
+          <p>
+            Di balik rutinitas analitis dan manajerial yang padat, keseimbangan kehidupan personal tetap terjaga dengan sangat baik.
+            Keluarga, khususnya sang adik, menjadi fondasi dan penyemangat utama, bersama dukungan penuh dari sang kekasih yang telah membersamai sejak masa PKKMB pada Agustus 2024 hingga resmi menjalin hubungan pada 22 Februari 2025.
+          </p>
+          <p>
+            Untuk melepas penat setelah seharian merancang proses bisnis dan membedah kerumitan data, membaca <em>manga</em> dan seri komik menjadi rutinitas relaksasi andalan saya dalam menjaga kesegaran berpikir.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Kepemimpinan & Pengalaman Manajerial -->
+      <section id="kepemimpinan" class="content-section" aria-labelledby="heading-kepemimpinan">
+        <div class="section-headline">
+          <h2 id="heading-kepemimpinan" class="section-title">Kepemimpinan &amp; Pengalaman</h2>
+          <span class="section-meta-chip">Organisasi &amp; Akademik</span>
+        </div>
+
+        <ul class="experience-list">
+          <!-- Role 1: Ketua ERPify -->
+          <li class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role-title">Ketua ERPify</h3>
+                <span class="exp-org">ERPify &bull; Komunitas &amp; Riset Sistem Perusahaan</span>
+              </div>
+              <span class="exp-period">Periode Saat Ini</span>
+            </div>
+            <p class="exp-desc">
+              Dipercaya mengemban amanah strategis memimpin jalannya organisasi untuk satu periode ke depan.
+              Bertanggung jawab atas visi pengembangan kapasitas mahasiswa dalam pemahaman implementasi Enterprise Resource Planning (ERP),
+              manajemen program kerja, dan koordinasi kolaborasi antar divisi.
+            </p>
+          </li>
+
+          <!-- Role 2: Koordinator MK MSDM -->
+          <li class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role-title">Koordinator Mata Kuliah Manajemen Sumber Daya Manusia (MSDM / HR050)</h3>
+                <span class="exp-org">Telkom University Kampus Jakarta</span>
+              </div>
+              <span class="exp-period">2024 - 2025</span>
+            </div>
+            <p class="exp-desc">
+              Mengelola kesiapan teknis dan operasional perkuliahan, menjembatani komunikasi antara dosen pengampu dan mahasiswa,
+              serta memastikan kelancaran administrasi akademik dan materi praktika manajemen SDM.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3: Proyek & Implementasi Nyata -->
+      <section id="proyek" class="content-section" aria-labelledby="heading-proyek">
+        <div class="section-headline">
+          <h2 id="heading-proyek" class="section-title">Proyek &amp; Eksplorasi</h2>
+          <span class="section-meta-chip">Portofolio Teknis</span>
+        </div>
+
+        <!-- Filter Segmented Control -->
+        <div class="filter-bar" role="group" aria-label="Filter kategori proyek">
+          <button type="button" class="filter-btn active" data-filter="all">Semua Proyek</button>
+          <button type="button" class="filter-btn" data-filter="erp">ERP &amp; Proses Bisnis</button>
+          <button type="button" class="filter-btn" data-filter="data">Data &amp; Machine Learning</button>
+          <button type="button" class="filter-btn" data-filter="cloud">Cloud Computing</button>
+        </div>
+
+        <!-- Projects List -->
+        <ul class="projects-list" id="project-container">
+          <!-- Project 1: SupLink -->
+          <li class="project-card featured" data-category="erp">
+            <div class="project-top-row">
+              <div class="project-name-group">
+                <span class="project-badge">Arsitektur Bisnis &amp; Purwarupa</span>
+                <h3 class="project-heading">SupLink: Purwarupa Arsitektur Bisnis untuk PT GoTrans Logistic International</h3>
+              </div>
+              <span class="project-year-badge">2025</span>
+            </div>
+            <p class="project-body">
+              Merancang arsitektur bisnis komprehensif dan purwarupa sistem "SupLink" untuk mendukung optimalisasi alur logistik dan manajemen rantai pasok.
+              Pemodelan proses dilakukan secara formal menggunakan notasi BPMN (Business Process Model and Notation) serta diagram UML untuk rancang bangun sistem.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-chip">BPMN 2.0</span>
+              <span class="tech-chip">UML</span>
+              <span class="tech-chip">Enterprise Architecture</span>
+              <span class="tech-chip">Logistics &amp; SCM</span>
+            </div>
+          </li>
+
+          <!-- Project 2: Spotify Audio Clustering -->
+          <li class="project-card" data-category="data">
+            <div class="project-top-row">
+              <div class="project-name-group">
+                <span class="project-badge">Machine Learning &amp; Web App</span>
+                <h3 class="project-heading">Spotify Audio Feature Clustering &amp; Analysis App</h3>
+              </div>
+              <span class="project-year-badge">2025</span>
+            </div>
+            <p class="project-body">
+              Mengembangkan aplikasi analisis dan clustering fitur audio lagu Spotify berbasis pembelajaran mesin tanpa supervisi (unsupervised machine learning).
+              Dibangun dengan mengintegrasikan Python, Scikit-Learn untuk algoritma klaster, Pandas untuk pengolahan dataset multidimensi, serta Streamlit sebagai antarmuka peramban interaktif.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Scikit-Learn</span>
+              <span class="tech-chip">Pandas</span>
+              <span class="tech-chip">Streamlit</span>
+            </div>
+          </li>
+
+          <!-- Project 3: Cloud Web Server Modul 1 -->
+          <li class="project-card" data-category="cloud">
+            <div class="project-top-row">
+              <div class="project-name-group">
+                <span class="project-badge">Tugas Praktikum Komputasi Awan</span>
+                <h3 class="project-heading">Deployment Web Server Mandiri pada Infrastruktur Cloud (Modul 1)</h3>
+              </div>
+              <span class="project-year-badge">2026</span>
+            </div>
+            <p class="project-body">
+              Implementasi halaman web server statis mandiri pengganti templat modul praktikum. Dideploy secara live pada platform edge cloud Vercel
+              dengan konfigurasi continuous deployment yang siap terhubung ke alur repositori kode.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-chip">Vercel Edge</span>
+              <span class="tech-chip">Azure Static Apps</span>
+              <span class="tech-chip">HTML5 Semantik</span>
+              <span class="tech-chip">CSS3 Modern</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 4: Sertifikasi & Perkakas -->
+      <section id="sertifikasi" class="content-section" aria-labelledby="heading-sertifikasi">
+        <div class="section-headline">
+          <h2 id="heading-sertifikasi" class="section-title">Sertifikasi &amp; Ekosistem Perkakas</h2>
+          <span class="section-meta-chip">Kompetensi</span>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card">
+            <span class="cert-type">Sertifikasi Profesional</span>
+            <h3 class="cert-name">Persiapan Agile Scrum (PSM I)</h3>
+            <p class="cert-desc">
+              Sedang mempersiapkan sertifikasi Professional Scrum Master I untuk menguasai tata kelola proyek perangkat lunak dan manajemen iteratif berstandar global.
+            </p>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card">
+            <span class="cert-type">Eksplorasi Industri</span>
+            <h3 class="cert-name">Kunjungan Industri PT Odoo Software Indonesia</h3>
+            <p class="cert-desc">
+              Mempelajari secara langsung implementasi sistem ERP terintegrasi skala enterprise, arsitektur modul Odoo, dan integrasi rantai pasok industri.
+            </p>
+          </div>
+
+          <!-- Tool 1 -->
+          <div class="cert-card">
+            <span class="cert-type">Perangkat Analisis &amp; Pemodelan</span>
+            <h3 class="cert-name">BPMN, UML, Python &amp; SQL</h3>
+            <p class="cert-desc">
+              Perangkat utama dalam memetakan proses bisnis, mendesain skema basis data relasional, dan melakukan ekstraksi wawasan analitik data.
+            </p>
+          </div>
+
+          <!-- Tool 2 -->
+          <div class="cert-card">
+            <span class="cert-type">Kolaborasi &amp; Manajemen Kerja</span>
+            <h3 class="cert-name">Notion, Discord &amp; WhatsApp</h3>
+            <p class="cert-desc">
+              Mengedepankan koordinasi tim yang efisien, baik dalam proyek rekayasa proses bisnis maupun pelaksanaan proyek podcast akademis di kampus.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Kontak & Kolaborasi -->
+      <section id="kontak" class="content-section" aria-labelledby="heading-kontak">
+        <div class="contact-card">
+          <h2 id="heading-kontak" class="contact-title">Kontak &amp; Diskusi</h2>
+          <p class="contact-body">
+            Saya terbuka untuk diskusi seputar sistem Enterprise Resource Planning (ERP), pemodelan proses bisnis, rekayasa data, maupun kolaborasi proyek akademik.
+          </p>
+
+          <div class="contact-actions">
+            <a href="mailto:achmadfazriel@student.telkomuniversity.ac.id" class="btn-solid">
+              Kirim Email
+            </a>
+            <button type="button" id="copy-email-btn" class="btn-outline">
+              Salin Alamat Email
+            </button>
+          </div>
+          <div id="copy-feedback" class="copy-status-msg" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- Footer Inside Content Flow -->
+      <footer class="site-footer">
+        <p>
+          &copy; 2026 <strong>Achmad Fazriel Miftahudin</strong> &bull; Program Studi S1 Sistem Informasi, Telkom University Kampus Jakarta.
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Client-side Logic -->
+  <script>
+    (function() {
+      "use strict";
+
+      // 1. Theme Management (Light / Dark)
+      var themeBtn = document.getElementById("theme-btn");
+      var themeLabel = document.getElementById("theme-label");
+      var themeIcon = document.getElementById("theme-icon");
+
+      function setTheme(isDark) {
+        if (isDark) {
+          document.documentElement.classList.add("dark");
+          themeLabel.textContent = "Terang";
+          themeIcon.innerHTML = "&#9788;";
+          localStorage.setItem("user_pref_theme", "dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+          themeLabel.textContent = "Gelap";
+          themeIcon.innerHTML = "&#9681;";
+          localStorage.setItem("user_pref_theme", "light");
+        }
+      }
+
+      var savedTheme = localStorage.getItem("user_pref_theme");
+      if (savedTheme) {
+        setTheme(savedTheme === "dark");
+      } else {
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(prefersDark);
+      }
+
+      themeBtn.addEventListener("click", function() {
+        var isCurrentDark = document.documentElement.classList.contains("dark");
+        setTheme(!isCurrentDark);
+      });
+
+      // 2. Active Section Spy for Sidebar Navigation
+      var navLinks = document.querySelectorAll(".nav-item-link");
+      var sections = document.querySelectorAll(".content-section");
+      var isClickScrolling = false;
+      var clickScrollTimeout = null;
+
+      function setActiveSection(sectionId) {
+        navLinks.forEach(function(link) {
+          if (link.getAttribute("data-section") === sectionId) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Immediate feedback on link click
+      navLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+          var targetId = link.getAttribute("data-section");
+          setActiveSection(targetId);
+          isClickScrolling = true;
+          if (clickScrollTimeout) clearTimeout(clickScrollTimeout);
+          clickScrollTimeout = setTimeout(function() {
+            isClickScrolling = false;
+            checkScrollPosition();
+          }, 850);
+        });
+      });
+
+      function checkScrollPosition() {
+        if (isClickScrolling) return;
+
+        // Bottom of page detection (activates section 5 'kontak')
+        var scrollPos = window.innerHeight + window.scrollY;
+        var threshold = document.documentElement.scrollHeight - 70;
+        if (scrollPos >= threshold) {
+          setActiveSection("kontak");
+          return;
+        }
+
+        // Section top position detection for accurate active state
+        var scrollOffset = window.scrollY + 180;
+        var currentSection = null;
+
+        sections.forEach(function(section) {
+          var top = section.offsetTop;
+          if (scrollOffset >= top) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        if (currentSection) {
+          setActiveSection(currentSection);
+        } else if (sections.length > 0) {
+          setActiveSection(sections[0].getAttribute("id"));
+        }
+      }
+
+      window.addEventListener("scroll", checkScrollPosition, { passive: true });
+      window.addEventListener("resize", checkScrollPosition, { passive: true });
+      checkScrollPosition();
+
+      // 3. Segmented Category Filtering for Projects
+      var filterButtons = document.querySelectorAll(".filter-btn");
+      var projectCards = document.querySelectorAll(".project-card");
+
+      filterButtons.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          filterButtons.forEach(function(b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+
+          var category = btn.getAttribute("data-filter");
+          projectCards.forEach(function(card) {
+            if (category === "all" || card.getAttribute("data-category") === category) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // 4. Copy Email Interaction with Graceful Fallback
+      var copyBtn = document.getElementById("copy-email-btn");
+      var copyFeedback = document.getElementById("copy-feedback");
+      var emailText = "achmadfazriel@student.telkomuniversity.ac.id";
+
+      copyBtn.addEventListener("click", async function() {
+        var copied = false;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(emailText);
+            copied = true;
+          }
+        } catch (e) {}
+
+        if (!copied) {
+          try {
+            var tempInput = document.createElement("input");
+            tempInput.setAttribute("value", emailText);
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            copied = document.execCommand("copy");
+            document.body.removeChild(tempInput);
+          } catch (e) {}
+        }
+
+        if (copied) {
+          copyFeedback.textContent = "Alamat email berhasil disalin ke clipboard!";
+        } else {
+          copyFeedback.textContent = "Email: " + emailText;
+        }
+
+        setTimeout(function() {
+          copyFeedback.textContent = "";
+        }, 3500);
+      });
+
+
+    })();
+  </script>
+</body>
+</html>
